@@ -4,7 +4,6 @@ const cors = require('cors');
 const morgan = require('morgan');
 const connectDatabase = require('./database');
 const v1PublicacionRouter = require('./routers/publicacion.router');
-const v1AuthRouter = require('./routers/auth.router');
 
 const app = express();
 
@@ -18,7 +17,6 @@ app.use(cors());
 app.use(express.json());
 
 // rutas de la aplicacion
-app.use('/api/v1/auth', v1AuthRouter);
 app.use('/api/v1/publicacion', v1PublicacionRouter);
 
 // configuracion del puerto
